@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Bdwi | Flutter Developer</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f0f;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #14b866, #0e3f25);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 8px 15px;
+            background: #1f1f1f;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #333;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #14b866;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #bfbfbf;
+        }
+
+        a {
+            color: #14b866;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Ahmed Bdwi</h1>
+        <p>Flutter Developer | Android & iOS Apps</p>
+    </header>
+
+    <!-- About -->
+    <section>
+        <h2>نبذة عني</h2>
+        <p>
+            أنا أحمد بدوي، مطور Flutter متخصص في بناء تطبيقات موبايل قوية وسريعة (Android & iOS).
+            بشتغل باستخدام Firebase, REST APIs, State Management وUI نظيف قابل للتطوير.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <h2>المهارات</h2>
+        <div class="skills">
+            <div class="skill">Flutter</div>
+            <div class="skill">Dart</div>
+            <div class="skill">Firebase</div>
+            <div class="skill">REST API</div>
+            <div class="skill">Google Maps</div>
+            <div class="skill">Provider / Bloc</div>
+            <div class="skill">Clean Architecture</div>
+            <div class="skill">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+        <h2>المشاريع</h2>
+
+        <div class="projects">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>El7arefa Booking App</h3>
+                <p>تطبيق حجز ملاعب يعمل بواجهة احترافية + Firebase + حجز مواعيد.</p>
+                <a href="https://github.com/ahmedbdwi/el7arefa-booking-app" target="_blank">رابط المشروع</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Chat App</h3>
+                <p>تطبيق شات كامل مع رفع صور وحالة أونلاين باستخدام Firebase.</p>
+                <a href="#" target="_blank">رابط المشروع</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Mini Store App</h3>
+                <p>تطبيق متجر مصغر مع عربة شراء وAPI لعرض المنتجات.</p>
+                <a href="#" target="_blank">رابط المشروع</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2>تواصل معي</h2>
+        <p>WhatsApp: <a href="https://wa.me/201000000000">اضغط هنا</a></p>
+        <p>Email: <a href="mailto:ahmed@example.com">ahmed@example.com</a></p>
+    </section>
+
+    <footer>
+        © 2025 — Created by Ahmed Bdwi
+    </footer>
+
+</body>
+</html>
