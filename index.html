@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بورتفوليو - [اسمك هنا]</title>
+    <title>بورتفوليو - [اسمك]</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* الأساسيات */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --transition: all 0.3s ease;
+            --primary: #6C63FF;
+            --secondary: #4A44C6;
+            --dark: #2A2A3C;
+            --light: #F5F5F7;
+            --accent: #FF6584;
+            --text: #333333;
+            --gray: #8A8A9E;
         }
 
         * {
@@ -29,18 +28,9 @@
         }
 
         body {
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9f9f9;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
         }
 
         .container {
@@ -50,55 +40,75 @@
             padding: 0 15px;
         }
 
-        .section {
-            padding: 80px 0;
+        section {
+            padding: 100px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
             display: inline-block;
-            padding-bottom: 10px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--secondary-color);
+            background: var(--primary);
             color: white;
-            border-radius: 5px;
+            border-radius: 30px;
             font-weight: 600;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .btn:hover {
-            background-color: var(--primary-color);
+            background: var(--secondary);
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
         }
 
-        /* الشريط العلوي */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             position: fixed;
             width: 100%;
             top: 0;
@@ -115,11 +125,11 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--dark);
         }
 
         .logo span {
-            color: var(--secondary-color);
+            color: var(--primary);
         }
 
         .nav-links {
@@ -132,11 +142,12 @@
 
         .nav-links a {
             font-weight: 600;
-            transition: var(--transition);
+            color: var(--dark);
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: var(--primary);
         }
 
         .hamburger {
@@ -145,16 +156,43 @@
             font-size: 1.5rem;
         }
 
-        /* قسم الهيرو */
+        /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A44C6 100%);
             color: white;
-            display: flex;
-            align-items: center;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-content h1 {
@@ -165,16 +203,37 @@
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
         }
 
-        .hero-content span {
-            color: var(--secondary-color);
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        /* قسم عني */
+        .hero-btns .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-btns .btn:hover {
+            background: var(--light);
+            transform: translateY(-3px);
+        }
+
+        .hero-btns .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .hero-btns .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* About Section */
         .about-content {
             display: flex;
             align-items: center;
@@ -183,16 +242,16 @@
 
         .about-img {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
         .about-img:hover img {
@@ -204,33 +263,41 @@
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--dark);
         }
 
         .about-text p {
             margin-bottom: 20px;
+            color: var(--gray);
         }
 
-        .skills {
+        .about-stats {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            gap: 30px;
             margin-top: 30px;
         }
 
-        .skill {
-            background-color: var(--light-color);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .stat {
+            text-align: center;
         }
 
-        /* قسم المهارات */
-        .skills-section {
-            background-color: var(--light-color);
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: white;
         }
 
         .skills-container {
@@ -240,11 +307,10 @@
         }
 
         .skill-category {
-            background-color: white;
+            background: var(--light);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
 
         .skill-category:hover {
@@ -254,17 +320,17 @@
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--dark);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .skill-category i {
-            color: var(--secondary-color);
+            color: var(--primary);
         }
 
-        .skill-bar {
+        .skill-item {
             margin-bottom: 20px;
         }
 
@@ -274,20 +340,20 @@
             margin-bottom: 8px;
         }
 
-        .skill-progress {
+        .skill-bar {
             height: 8px;
-            background-color: #e0e0e0;
+            background: #e0e0e0;
             border-radius: 4px;
             overflow: hidden;
         }
 
-        .skill-progress-bar {
+        .skill-progress {
             height: 100%;
-            background-color: var(--secondary-color);
+            background: var(--primary);
             border-radius: 4px;
         }
 
-        /* قسم المشاريع */
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -295,20 +361,20 @@
         }
 
         .project-card {
-            background-color: white;
-            border-radius: 10px;
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .project-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
         }
 
@@ -316,7 +382,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
         .project-card:hover .project-img img {
@@ -324,37 +390,39 @@
         }
 
         .project-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .project-info h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: var(--primary-color);
+            color: var(--dark);
         }
 
         .project-info p {
+            color: var(--gray);
             margin-bottom: 15px;
-            color: #666;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .project-tag {
-            background-color: var(--light-color);
+            background: var(--light);
+            color: var(--primary);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 600;
         }
 
-        /* قسم التواصل */
+        /* Contact Section */
         .contact {
-            background-color: var(--light-color);
+            background: white;
         }
 
         .contact-container {
@@ -378,8 +446,8 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background-color: var(--secondary-color);
-            color: white;
+            background: var(--light);
+            color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -390,14 +458,13 @@
         .contact-details h4 {
             font-size: 1.2rem;
             margin-bottom: 5px;
-            color: var(--primary-color);
+            color: var(--dark);
         }
 
         .contact-form {
-            background-color: white;
+            background: var(--light);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
         }
 
         .form-group {
@@ -414,13 +481,13 @@
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: var(--transition);
+            transition: border-color 0.3s;
         }
 
         .form-control:focus {
-            border-color: var(--secondary-color);
+            border-color: var(--primary);
             outline: none;
         }
 
@@ -429,11 +496,11 @@
             resize: vertical;
         }
 
-        /* الفوتر */
+        /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background: var(--dark);
             color: white;
-            padding: 50px 0 20px;
+            padding: 70px 0 20px;
         }
 
         .footer-content {
@@ -450,7 +517,7 @@
         }
 
         .footer-logo span {
-            color: var(--secondary-color);
+            color: var(--primary);
         }
 
         .social-links {
@@ -460,18 +527,18 @@
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .social-link:hover {
-            background-color: var(--secondary-color);
+            background: var(--primary);
             transform: translateY(-5px);
         }
 
@@ -482,12 +549,12 @@
             width: 100%;
         }
 
-        /* التجاوب */
+        /* Responsive */
         @media (max-width: 992px) {
             .about-content {
                 flex-direction: column;
             }
-
+            
             .about-img, .about-text {
                 flex: none;
                 width: 100%;
@@ -498,39 +565,44 @@
             .navbar {
                 padding: 15px 0;
             }
-
+            
             .nav-links {
                 position: fixed;
                 top: 70px;
                 right: -100%;
                 width: 80%;
                 height: calc(100vh - 70px);
-                background-color: white;
+                background: white;
                 flex-direction: column;
                 align-items: center;
                 padding-top: 50px;
-                transition: var(--transition);
+                transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             }
-
+            
             .nav-links.active {
                 right: 0;
             }
-
+            
             .nav-links li {
                 margin: 15px 0;
             }
-
+            
             .hamburger {
                 display: block;
             }
-
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-
+            
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -538,19 +610,24 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
-
+            
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-
-            .section {
-                padding: 60px 0;
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
+    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -569,38 +646,48 @@
         </div>
     </header>
 
-    <!-- قسم الهيرو -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>مرحباً، أنا <span>[اسمك هنا]</span></h1>
-                <p>مطور ويب مبدع ومصمم واجهات مستخدم. أحب تحويل الأفكار إلى واقع رقمي مذهل من خلال التصميم والبرمجة.</p>
-                <a href="#projects" class="btn">شاهد أعمالي</a>
+                <h1>مرحباً، أنا <span style="color: #FFD166;">[اسمك]</span></h1>
+                <p>مطور واجهات أمامية ومصمم واجهات مستخدم. أحب تحويل الأفكار إلى تجارب رقمية مذهلة.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">شاهد أعمالي</a>
+                    <a href="#contact" class="btn btn-outline">تواصل معي</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم عني -->
-    <section class="section" id="about">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>عني</h2>
+                <p>تعرف على المزيد عن مسيرتي وخبراتي</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="صورة شخصية">
                 </div>
                 <div class="about-text">
-                    <h3>مطور ويب مبدع</h3>
-                    <p>أنا مطور ويب شغوف بإنشاء مواقع وتطبيقات ويب مذهلة. لدي خبرة في تصميم واجهات المستخدم وتطوير الواجهات الأمامية والخلفية باستخدام أحدث التقنيات.</p>
-                    <p>أستمتع بتحويل الأفكار المعقدة إلى واجهات بسيطة وسهلة الاستخدام. أعمل دائمًا على تحسين مهاراتي وتعلم تقنيات جديدة لتقديم أفضل الحلول لعملائي.</p>
-                    <div class="skills">
-                        <div class="skill">HTML</div>
-                        <div class="skill">CSS</div>
-                        <div class="skill">JavaScript</div>
-                        <div class="skill">React</div>
-                        <div class="skill">Node.js</div>
-                        <div class="skill">UI/UX Design</div>
+                    <h3>مطور واجهات أمامية مبدع</h3>
+                    <p>أنا مطور واجهات أمامية شغوف بإنشاء تجارب ويب مذهلة وسهلة الاستخدام. لدي خبرة في تطوير واجهات مستخدم تفاعلية باستخدام أحدث التقنيات.</p>
+                    <p>أعمل دائمًا على تحسين مهاراتي وتعلم تقنيات جديدة لتقديم أفضل الحلول لعملائي. أحب التحديات وأستمتع بحل المشكلات المعقدة.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-text">مشروع مكتمل</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-text">سنوات خبرة</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-text">عميل سعيد</span>
+                        </div>
                     </div>
                     <a href="#contact" class="btn" style="margin-top: 20px;">تواصل معي</a>
                 </div>
@@ -608,100 +695,101 @@
         </div>
     </section>
 
-    <!-- قسم المهارات -->
-    <section class="section skills-section" id="skills">
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
         <div class="container">
             <div class="section-title">
                 <h2>مهاراتي</h2>
+                <p>المهارات والتقنيات التي أتقنها</p>
             </div>
             <div class="skills-container">
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> التطوير الأمامي</h3>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>HTML/CSS</span>
                             <span>95%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 95%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>JavaScript</span>
                             <span>90%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 90%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>React</span>
                             <span>85%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> التطوير الخلفي</h3>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>Node.js</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>PHP</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span>Python</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 70%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-paint-brush"></i> التصميم</h3>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>UI/UX Design</span>
                             <span>90%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 90%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>Figma</span>
                             <span>85%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 85%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
+                    <div class="skill-item">
                         <div class="skill-info">
                             <span>Adobe XD</span>
                             <span>80%</span>
                         </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 80%"></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> أدوات أخرى</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Git</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Webpack</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>RESTful APIs</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
                     </div>
                 </div>
@@ -709,11 +797,12 @@
         </div>
     </section>
 
-    <!-- قسم المشاريع -->
-    <section class="section" id="projects">
+    <!-- Projects Section -->
+    <section id="projects">
         <div class="container">
             <div class="section-title">
                 <h2>مشاريعي</h2>
+                <p>أحدث أعمالي ومشاريعي</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
@@ -722,7 +811,7 @@
                     </div>
                     <div class="project-info">
                         <h3>موقع تجارة إلكترونية</h3>
-                        <p>موقع تجارة إلكترونية متكامل مع نظام دفع إلكتروني وإدارة المخزون.</p>
+                        <p>موقع تجارة إلكترونية متكامل مع نظام دفع وإدارة مخزون.</p>
                         <div class="project-tags">
                             <div class="project-tag">React</div>
                             <div class="project-tag">Node.js</div>
@@ -737,7 +826,7 @@
                     </div>
                     <div class="project-info">
                         <h3>منصة تعليمية</h3>
-                        <p>منصة تعليمية تفاعلية مع نظام إدارة محتوى ومتابعة التقدم الدراسي.</p>
+                        <p>منصة تعليمية تفاعلية مع نظام إدارة محتوى ومتابعة التقدم.</p>
                         <div class="project-tags">
                             <div class="project-tag">Vue.js</div>
                             <div class="project-tag">Laravel</div>
@@ -765,11 +854,12 @@
         </div>
     </section>
 
-    <!-- قسم التواصل -->
-    <section class="section contact" id="contact">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>تواصل معي</h2>
+                <p>لا تتردد في التواصل معي لأي استفسار</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -826,12 +916,12 @@
         </div>
     </section>
 
-    <!-- الفوتر -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="footer-logo">بورتف<span>وليو</span></a>
-                <p>مطور ويب مبدع ومصمم واجهات مستخدم. أحب تحويل الأفكار إلى واقع رقمي مذهل.</p>
+                <p>مطور واجهات أمامية ومصمم واجهات مستخدم. أحب تحويل الأفكار إلى تجارب رقمية مذهلة.</p>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -840,7 +930,7 @@
                     <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="copyright">
-                    <p>© 2023 [اسمك هنا]. جميع الحقوق محفوظة.</p>
+                    <p>© 2023 [اسمك]. جميع الحقوق محفوظة.</p>
                 </div>
             </div>
         </div>
