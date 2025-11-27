@@ -812,3 +812,41 @@ section {
     }
 }
 
+/* Image Styles */
+.profile-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-element img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ensure proper image containers */
+.image-placeholder {
+    display: none; /* Hide the placeholder when using real images */
+}
+
+.project-image:has(img) .image-placeholder {
+    display: none;
+}
