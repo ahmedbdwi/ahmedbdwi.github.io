@@ -983,3 +983,78 @@ section {
         transform: scale(1);
     }
 }
+
+
+/* إصلاح حجم صور المشاريع للشاشات الكبيرة */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    max-width: 100%;
+}
+
+.project-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-secondary);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* تحديد حجم ثابت للصور في الشاشات الكبيرة */
+@media (min-width: 769px) {
+    .project-image {
+        height: 250px; /* ارتفاع ثابت للصور */
+    }
+    
+    .project-card {
+        max-width: 400px; /* عرض أقصى للبطاقات */
+        margin: 0 auto; /* توسيط البطاقات */
+    }
+}
+
+/* لشاشات أكبر جداً */
+@media (min-width: 1200px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .project-image {
+        height: 280px; /* زيادة طفيفة في الارتفاع للشاشات الكبيرة */
+    }
+}
+
+/* إصلاح تخطيط الشبكة للشاشات المتوسطة */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .project-image {
+        height: 220px;
+    }
+}
+
+/* للهواتف */
+@media (max-width: 480px) {
+    .project-image {
+        height: 180px;
+    }
+}
