@@ -851,7 +851,7 @@ section {
     display: none;
 }
 
-/* تحسينات إضافية للصور */
+/* تحسينات الصور */
 .profile-image {
     position: relative;
     overflow: hidden;
@@ -865,13 +865,14 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%; /* اضبط هذا الرقم حسب صورتك */
+    object-position: center center;
 }
 
 .project-image {
     height: 250px;
     overflow: hidden;
     position: relative;
+    background: var(--bg-secondary);
 }
 
 .project-image img {
@@ -885,15 +886,69 @@ section {
     transform: scale(1.05);
 }
 
-/* للشاشات المتوسطة */
+/* التأكد من أن العناصر العائمة تظهر بشكل صحيح */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* لمنع التداخل مع النقر */
+}
+
+.floating-element {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    box-shadow: var(--shadow);
+    animation: float 3s ease-in-out infinite;
+    pointer-events: auto; /* السماح بالنقر على العناصر */
+}
+
+/* إصلاح تموضع العناصر العائمة */
+.element-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.element-3 {
+    bottom: 30%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.element-4 {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+/* إصلاح الاستجابة للشاشات الصغيرة */
 @media (max-width: 968px) {
     .profile-image {
         width: 300px;
         height: 300px;
     }
+    
+    .project-image {
+        height: 200px;
+    }
 }
 
-/* للهواتف */
 @media (max-width: 480px) {
     .profile-image {
         width: 250px;
@@ -901,6 +956,30 @@ section {
     }
     
     .project-image {
-        height: 200px;
+        height: 180px;
+    }
+    
+    .floating-element {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+/* إضافة تأثيرات تحميل للصور */
+.profile-image img,
+.project-image img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
