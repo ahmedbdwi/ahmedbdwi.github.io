@@ -493,6 +493,7 @@ section {
     line-height: 1.6;
 }
 
+/* تحسين تصميم التقنيات في المشاريع */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -501,12 +502,48 @@ section {
 }
 
 .project-tech span {
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    padding: 0.3rem 0.8rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.project-tech span:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .project-tech span {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+}
+
+/* تصميم بديل إذا أردت ألوان مختلفة لكل تقنية */
+.project-tech span:nth-child(1) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.project-tech span:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.project-tech span:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* تأثيرات إضافية للشاشات الكبيرة */
+@media (min-width: 768px) {
+    .project-tech span {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
+    }
 }
 
 .project-links {
