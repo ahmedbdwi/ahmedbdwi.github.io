@@ -446,9 +446,11 @@ section {
 /* Portfolio Section */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-items: center; /* يوسّط الكروت في الشبكة */
 }
+
 
 .project-card {
     background: var(--bg-card);
@@ -456,6 +458,7 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    width: 300px; /* عرض ثابت للكارت */
 }
 
 .project-card:hover {
@@ -469,6 +472,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+     width: 100%;  /* يمتد على عرض الكارت فقط */
+    height: 200px; /* ارتفاع ثابت، يقدر يتغير حسب تصميمك */
+    object-fit: cover; /* الصورة تغطي الكارت بدون تشويه */
 }
 
 .project-image .image-placeholder {
