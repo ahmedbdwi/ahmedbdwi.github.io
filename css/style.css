@@ -850,3 +850,57 @@ section {
 .project-image:has(img) .image-placeholder {
     display: none;
 }
+
+/* تحسينات إضافية للصور */
+.profile-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%; /* اضبط هذا الرقم حسب صورتك */
+}
+
+.project-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* للشاشات المتوسطة */
+@media (max-width: 968px) {
+    .profile-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* للهواتف */
+@media (max-width: 480px) {
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+}
