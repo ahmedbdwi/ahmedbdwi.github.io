@@ -118,7 +118,7 @@ function initAnimations() {
     });
 }
 
-// Contact Form
+// Contact Form - البديل البسيط
 function initContactForm() {
     const contactForm = document.querySelector('.contact-form');
     
@@ -127,7 +127,6 @@ function initContactForm() {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(contactForm);
             const name = contactForm.querySelector('input[type="text"]').value;
             const email = contactForm.querySelector('input[type="email"]').value;
             const message = contactForm.querySelector('textarea').value;
@@ -138,11 +137,14 @@ function initContactForm() {
                 return;
             }
 
-            // Here you would typically send the data to a server
-            console.log('Contact form submitted:', { name, email, message });
+            // Open default email client
+            const subject = `Message from ${name} - Portfolio Contact`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            
+            window.open(`mailto:abdway836@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
             
             // Show success message
-            showNotification('Thank you! Your message has been sent successfully.', 'success');
+            showNotification('Thank you! Your email client will open to send the message.', 'success');
             contactForm.reset();
         });
     }
